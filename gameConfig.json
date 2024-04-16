@@ -1,0 +1,35 @@
+﻿{
+    "WorldMaxX": 10,
+    "WorldMaxY": 10,
+    "Entity": [
+        {
+            "Name": "Gordon Freeman",
+            "MaxHealth": 150,
+            "StartingX": 1,
+            "StartingY": 1
+        },
+        {
+            "Name": "Nihilath",
+            "MaxHealth": 300,
+            "StartingX": 2,
+            "StartingY": 1
+        }
+    ],
+    "ChestItems": [
+        {
+            "Type": "Weapon",
+            "Name": "Sword",
+            "Quantity": 3
+        },
+        {
+            "Type": "Armour",
+            "Name": "Shield",
+            "Quantity": 3
+        },
+        {
+            "Type": "Potion",
+            "Name": "Health Potion",
+            "Quantity": 3
+        }
+    ]
+}
