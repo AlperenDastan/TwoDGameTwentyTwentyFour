@@ -18,12 +18,12 @@
     "ChestItems": [
         {
             "Type": "Weapon",
-            "Name": "Sword",
+            "Name": "Crowbar",
             "Quantity": 3
         },
         {
             "Type": "Armour",
-            "Name": "Shield",
+            "Name": "HEV Suit",
             "Quantity": 3
         },
         {

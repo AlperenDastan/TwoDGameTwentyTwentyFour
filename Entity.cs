@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace TwoDGameTwentyTwentyFour
 {
     // An entity class which represents what kind of entities exist in the game's world 
     public class Entity
     {
+        
         public string Name { get; set; }
         public int HitPoint { get; set; } // This displays the current healthpoint of the Entity
         public int MaxHitPoints { get; set; }   // This displays the maximum health points the entity can have
@@ -53,8 +53,8 @@ namespace TwoDGameTwentyTwentyFour
                 if (weapon != null && IsInRange(target, weapon))
                 {
                     int damage = weapon.Damage;
-                    target.ReceiveHit(damage);
                     Console.WriteLine($"{Name} Attacked {target.Name} with {weapon.Name} for {damage} Damage!");
+                    target.ReceiveHit(damage);
                 }
                 else if (weapon != null)
                 {
@@ -66,8 +66,8 @@ namespace TwoDGameTwentyTwentyFour
         {
             // If entity is left without a weapon, then it would do no damage, but this ensures that the entity can still do damage whether or not it has a weapon, but not as strong as having a weapon. 
             int damage = 4;
-            target.ReceiveHit(damage);
             Console.WriteLine($"{Name} Attacked {target.Name} with an unarmed Hit for {damage} damage!");
+            target.ReceiveHit(damage);
         }
 
         // The defense mechanism which is used when the entity takes damage and the armour that the entity is wielding, reduces an X amount of damage that is taken from the enemy. 
@@ -108,21 +108,6 @@ namespace TwoDGameTwentyTwentyFour
         private void Die()
         {
             Console.WriteLine($"{Name} is dead.");
-        }
-
-        // This is what a template which defines the moves in a fight. 
-        public void PerformAction(Entity target)
-        {       
-
-            ChooseAction(); // The entity can perform an action depending on its status and what it has in its inventory.
-            Hit(target); // To perform an attack or another action. 
-            Logger.Log($"{Name} Performed an action.");
-        }
-
-        // A virtual method that can be adapted in derived classes. 
-        protected virtual void ChooseAction()
-        {
-            // Choose action. Can be more complex in derived classes.
         }
 
         // Like being able to loot chest, the entities can also loot eachother, and grab the enemy's items as well. 
@@ -199,6 +184,20 @@ namespace TwoDGameTwentyTwentyFour
             Console.WriteLine($"{Name} has picked up the following item: {item.Name} from the treasure.");
         }
 
+        // This is what a template could look like which defines the moves in a fight. 
+        public void PerformAction(Entity target)
+        {
+
+            ChooseAction(); // The entity can perform an action depending on its status and what it has in its inventory.
+            Logger.Instance.Log($"{Name} Performed an action.");
+            Hit(target); // To perform an attack or another action. 
+        }
+
+        // A virtual method that can be adapted in derived classes. 
+        protected virtual void ChooseAction()
+        {
+            // Choose action. Can be more complex in derived classes.
+        }
         public void UsePotion(Potions potion)
         {
             // Looks and checks if there is a potion in the entity's inventory

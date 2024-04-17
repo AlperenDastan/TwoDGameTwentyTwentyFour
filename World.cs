@@ -46,8 +46,8 @@ namespace TwoDGameTwentyTwentyFour
             // Uses the GameObjectFactory to add starting objects and entities to the world.
             AddEntity(GameObjectFactory.CreateEntity("Gordon Freeman", 150, 150, 1, 1));
             AddEntity(GameObjectFactory.CreateEntity("Nihilath", 300, 300, 2, 1));
-            AddWorldObject(GameObjectFactory.CreateWeapon("Sword", 20, 4));
-            AddWorldObject(GameObjectFactory.CreateArmour("Shield", 5));
+            AddWorldObject(GameObjectFactory.CreateWeapon("Crowbar", 20, 4));
+            AddWorldObject(GameObjectFactory.CreateArmour("HEV Suit", 5));
             AddWorldObject(GameObjectFactory.CreateWeapon("Fist", 4, 2));
             // AddWorldObject(GameObjectFactory.CreatePotion("Health Potion", 40));
 

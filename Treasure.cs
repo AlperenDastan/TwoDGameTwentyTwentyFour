@@ -21,7 +21,7 @@ namespace TwoDGameTwentyTwentyFour
 
         private void InitializeContents()
         {
-            Logger.Log("Creating Treasure with random items.");
+            Logger.Instance.Log("Creating Treasure with random items.");
 
             // Our random number generator.
             Random rnd = new Random();
@@ -35,14 +35,14 @@ namespace TwoDGameTwentyTwentyFour
             for (int i = 0; i < weaponItemscount; i++)
             {
                 // adds a new weapon to the treasure and into the weapons list with increasing damage and a fixed range on weapon.
-                WeaponItems.Add(GameObjectFactory.CreateWeapon($"Sword{i + 1}", 10 * (i + 1), 1));
+                WeaponItems.Add(GameObjectFactory.CreateWeapon($"Crowbar{i + 1}", 10 * (i + 1), 1));
             }
 
             // Populates treasures with armour
             for (int i = 0; i < armourItemscount; i++)
             {
                 // adds a new armour to the treasure and into the armour list with increasing damage reduction.
-                ArmourItems.Add(GameObjectFactory.CreateArmour($"Shield{i + 1}", 5 * (i + 1)));
+                ArmourItems.Add(GameObjectFactory.CreateArmour($"HEV Suit{i + 1}", 5 * (i + 1)));
             }
 
             // Populates treasures with potions

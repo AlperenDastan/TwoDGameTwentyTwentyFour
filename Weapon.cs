@@ -25,7 +25,7 @@ namespace TwoDGameTwentyTwentyFour
             // Logic for attack through the interface.
             if (target != null)
             {
-                Logger.Log($"{Name} Attacks {target.Name}");
+                Logger.Instance.Log($"{Name} Attacks {target.Name}");
                 target.ReceiveHit(Damage);
             }
         }

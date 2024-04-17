@@ -14,21 +14,21 @@ namespace TwoDGameTwentyTwentyFour
         // A method to create an entity in the game's world
         public static Entity CreateEntity(string name, int hitPoint, int maxHitPoints, int x, int y)
         {
-            Logger.Log($"Creating entity: {name}");
+            Logger.Instance.Log($"Creating entity: {name}");
             return new Entity(name, hitPoint, maxHitPoints, x, y);
         }
 
         // Method to create a weapon
         public static Weapon CreateWeapon(string name, int hitPoint, int range)
         {
-            Logger.Log($"Creating Weapon: {name}");
+            Logger.Instance.Log($"Creating Weapon: {name}");
             return new Weapon(name, hitPoint, range);
         }
 
         // Method to create armour
         public static Armour CreateArmour(string name, int reduceHitPoint)
         {
-            Logger.Log($"Creating Armour: {name}");
+            Logger.Instance.Log($"Creating Armour: {name}");
             return new Armour(name, reduceHitPoint);
         }
 
@@ -43,7 +43,7 @@ namespace TwoDGameTwentyTwentyFour
         // Method to create a Potion 
         public static Potions CreatePotion(string name, int healthRestore)
         {
-            Logger.Log($"Creating potion...");
+            Logger.Instance.Log($"Creating potion...");
             return new Potions(name, healthRestore);
         }
 
